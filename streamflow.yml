@@ -1,0 +1,22 @@
+version: v1.0
+workflows:
+  hello-world:
+    type: cwl
+    config:
+      file: cwl/example_workflow.cwl
+      settings: cwl/input.yml
+    bindings:
+      - step: /example_step
+        target:
+          model: helm-test
+
+models:
+  docker-test:
+    type: docker
+    config:
+      image: busybox:1.36
+  helm-test:
+    type: helm
+    config:
+      chart: helm/hogechart
+      # inCluster: true

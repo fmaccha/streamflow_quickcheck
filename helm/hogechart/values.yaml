@@ -1,0 +1,29 @@
+replicaCount: 1
+
+image:
+  repository: alphaunito/streamflow
+  # repository: fmaccha/streamflow
+  pullPolicy: Always
+
+args: ["streamflow", "version"]
+restartPolicy: OnFailure
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  create: true
+  annotations: {}
+  name:
+
+podSecurityContext: {}
+
+securityContext: {}
+
+resources: {}
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
